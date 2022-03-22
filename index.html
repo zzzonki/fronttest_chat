@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>var fj_token = "neks1Tw8JoNRIfln5es_bg";</script>
+    <script src="https://fakejson.com/fakejson.min.js" async></script>
+</head>
+<body>
+    <div class="workspace">
+        <div class="container">
+
+            <section class="first-menu">
+                <div class="menu-item">
+                    <svg class="icon-left clickable" viewBox="0 0 50 50"><use xlink:href="/icons/sprite.svg#icon-left" /></svg>
+                    <div class="avatar">
+                        <svg class="icon-face-big" viewBox="0 0 50 50"><use xlink:href="/icons/sprite.svg#icon-face" /></svg>
+                    </div>
+                    <span class="name">Victor Josef</span>
+                </div>
+                <div class="menu-item">
+                    <div class="select" data-state="">
+                        <div class="select-header">
+                            <span class="select-current">English</span>
+                            <svg class="icon-down" viewBox="0 0 50 50"><use xlink:href="/icons/sprite.svg#icon-left" /></svg>
+                        </div>
+                        <div class="select-content">
+                            <div class="select-item">English</div>
+                            <div class="select-item">Русский</div>
+                            <div class="select-item">Espanol</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second-menu">
+                <button class="btn-translate">
+                    Auto English Translation
+                </button>
+                <div class="menu-item">
+                    <svg class="icon-phone clickable" viewBox="0 0 25 25"><use xlink:href="/icons/sprite.svg#icon-phone" /></svg>
+                    <svg class="icon-video clickable" viewBox="0 0 25 25"><use xlink:href="/icons/sprite.svg#icon-video" /></svg>
+                </div>
+            </section>
+
+            <section class="chat-box">
+                
+            </section>
+
+            <section class="bot-menu">
+                <form class="mes-form" action="">
+                    <div class="input-field">
+                        <svg class="input-emoji icon-emoji" viewBox="0 0 24 24"><use xlink:href="/icons/sprite.svg#icon-smile" /></svg>
+                        <input type="text" class="mes-input" placeholder="Type a message">
+                        <div class="input-pic">
+                            <input type="file" id="input-img" accept="image/png, image/gif, image/jpeg">
+                            <label for="input-img"><svg class="input-photo icon-photo" viewBox="0 0 24 24"><use xlink:href="/icons/sprite.svg#icon-photo" /></svg></label>
+                        </div>
+                    </div>
+                    <svg class="icon-heart clickable" viewBox="0 0 24 24"><use xlink:href="/icons/sprite.svg#icon-heart" /></svg>
+                </form>                              
+                <div class="emoji-field hidden">
+                    <img src="" alt="😺" onclick="insertSmile('😺')"/>
+                    <img src="" alt="😸" onclick="insertSmile('😸')"/>
+                    <img src="" alt="😹" onclick="insertSmile('😹')"/>
+                    <img src="" alt="😻" onclick="insertSmile('😻')"/>
+                    <img src="" alt="😼" onclick="insertSmile('😼')"/>
+                    <img src="" alt="😽" onclick="insertSmile('😽')"/>
+                    <img src="" alt="🙀" onclick="insertSmile('🙀')"/>
+                    <img src="" alt="😿" onclick="insertSmile('😿')"/>
+                    <img src="" alt="😾" onclick="insertSmile('😾')"/>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

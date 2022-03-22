@@ -1,0 +1,44 @@
+.select{
+    border: none;
+    position: relative;
+
+    &-header{
+
+        cursor: pointer;
+
+        span{
+            font-size: 18px;
+        }
+
+        i{
+            width: 9px;
+        }
+    }
+
+    &-content{
+        position: absolute;
+        display: none;
+        opacity: 0;
+        left: 0;
+        right: 0;
+        top: 100%;
+    }
+
+    &-item{
+        font-size: 18px;
+        line-height: 24px;
+        cursor: pointer;
+    }
+
+    &.active{
+
+        .select-content{
+            display: block;
+        }
+
+        .icon-down{
+            color: transparent;
+        }
+
+    }
+}

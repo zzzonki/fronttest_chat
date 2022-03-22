@@ -1,0 +1,24 @@
+{
+  "name": "fronttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "gulp": "gulp"
+  },
+  "author": "zzz",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "mock-websocket": "^0.0.7",
+    "sass": "^1.49.9"
+  },
+  "prettier": {
+    "parser": "babel",
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "singleQuote": true
+  }
+}
