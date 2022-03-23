@@ -1,13 +1,13 @@
 let chatbox = document.querySelector('.chat-box');
-input = document.querySelector('.mes-input');
+input = document.querySelector('.input__text');
 form = document.querySelector('.mes-form');
-emoji = document.querySelector('.input-emoji');
-emoji_field = document.querySelector('.emoji-field');
+emoji = document.querySelector('.input__emoji');
+emoji_field = document.querySelector('.emoji-list');
 select = document.querySelector('.select');
-select_header = document.querySelector('.select-header');
-select_items = document.querySelectorAll('.select-item');
-select_current = document.querySelector('.select-current');
-select_content = document.querySelector('.select-content');
+select_header = document.querySelector('.select__header');
+select_items = document.querySelectorAll('.select__item');
+select_current = document.querySelector('.select__current');
+select_content = document.querySelector('.select__content');
 input_img = document.querySelector('#input-img');
 
 let messages = [];
@@ -17,28 +17,24 @@ let flag = true;
 select_header.addEventListener('click', () => {
     select_content.classList.add('animated');
     if (flag) {
-        select_content.classList.remove('fadeOutUp');
-        select_content.classList.add('fadeInDown');
+        select_content.classList.remove('fade-out-up');
+        select_content.classList.add('fade-in-down');
         select.classList.toggle('active');
         flag = false;
     } else {
-        select_content.classList.remove('fadeInDown');
-        select_content.classList.add('fadeOutUp');
+        select_content.classList.remove('fade-in-down');
+        select_content.classList.add('fade-out-up');
         flag = true;
-        setTimeout(() => {
-            select.classList.remove('active');
-        }, 700);
+        select.classList.remove('active');
     }
 });
 select_items.forEach((item) => {
     item.addEventListener('click', () => {
-        select_content.classList.remove('fadeInDown');
-        select_content.classList.add('fadeOutUp');
+        select_content.classList.remove('fade-in-down');
+        select_content.classList.add('fade-out-up');
         flag = true;
-        setTimeout(() => {
-            select.classList.remove('active');
-            select_current.innerText = item.innerText;
-        }, 700);
+        select.classList.remove('active');
+        select_current.innerText = item.innerText;
     });
 });
 
@@ -70,10 +66,14 @@ input_img.addEventListener('change', (event) => {
     FR.onload = function (event) {
         chatbox.insertAdjacentHTML(
             'beforeEnd',
-            '<div class="message-box message-sent"><div class="message"><img class="message-img" src="' +
+            '<div class="message message_sent"><div class="message__text"><img class="message__img" src="' +
                 event.target.result +
-                '" alt=""></div><svg class="icon-check" viewBox="0 0 24 24"><use xlink:href="/icons/sprite.svg#icon-check" /></svg></div>'
+                '" alt=""></div><svg class="icon-check" viewBox="0 0 24 24"><use xlink:href="./icons/sprite.svg#icon-check" /></svg></div>'
         );
+        chatbox.lastChild.scrollIntoView({
+            behavior: 'auto',
+            block: 'end',
+        });
     };
     FR.readAsDataURL(photo);
 });
@@ -88,13 +88,6 @@ form.addEventListener('submit', (event) => {
         };
         sendMessage(message);
     }
-});
-
-input.addEventListener('focus', () => {
-    input.placeholder = '';
-});
-input.addEventListener('blur', () => {
-    input.placeholder = 'Type a message';
 });
 
 emoji.addEventListener('click', () => {
@@ -113,7 +106,7 @@ function sendMessage(message) {
     if (message.inc) {
         chatbox.insertAdjacentHTML(
             'beforeEnd',
-            '<div class="message-box message-inc"><div class="avatar"><svg class="icon-face" viewBox="0 0 50 50"><use xlink:href="/icons/sprite.svg#icon-face" /></svg></div><div class="message"><span>' +
+            '<div class="message message_inc"><div class="message__avatar avatar"><svg class="icon-face" viewBox="0 0 50 50"><use xlink:href="./icons/sprite.svg#icon-face" /></svg></div><div class="message__text"><span>' +
                 messages[messages.length - 1].text +
                 '</span></div></div>'
         );
@@ -121,9 +114,9 @@ function sendMessage(message) {
         input.value = '';
         chatbox.insertAdjacentHTML(
             'beforeEnd',
-            '<div class="message-box message-sent"><div class="message"><span>' +
+            '<div class="message message_sent"><div class="message__text"><span>' +
                 messages[messages.length - 1].text +
-                '</span></div><svg class="icon-check" viewBox="0 0 24 24"><use xlink:href="/icons/sprite.svg#icon-check" /></svg></div>'
+                '</span></div><svg class="icon-check" viewBox="0 0 24 24"><use xlink:href="./icons/sprite.svg#icon-check" /></svg></div>'
         );
         console.log(messages);
         chatbox.lastChild.scrollIntoView({

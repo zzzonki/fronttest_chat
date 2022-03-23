@@ -1,0 +1,44 @@
+.message{
+    display: flex;
+    align-items: center;
+    
+    .message__text{
+        display: inline-block;
+        vertical-align: top;
+        padding: 15px 20px;
+        max-width: 295px;
+        word-wrap: break-word;
+        font-size: 16px;
+        border-radius: 20px;
+    }
+
+    &.message_inc{
+        
+        .message__text{
+            margin: 5px auto 5px 5px;
+            color: $text-color-main;
+            background-color: $color-second;
+        }   
+    }
+
+    &.message_sent{
+        
+        .message__text{
+            margin: 5px 5px 5px auto;
+            color: $text-color-second;
+            background-color: $color-main;
+        }
+    }
+
+    &__avatar{
+        margin-right: 3px;
+        width: 35px;
+        height: 35px;
+    }
+
+    &__img{
+        max-width: 150px;
+        max-height: 200px;
+    }
+
+}

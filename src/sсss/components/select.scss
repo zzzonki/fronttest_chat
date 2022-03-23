@@ -1,8 +1,9 @@
 .select{
-    border: none;
     position: relative;
+    border: none;
+    transition: .3s;
 
-    &-header{
+    &__header{
 
         cursor: pointer;
 
@@ -15,16 +16,15 @@
         }
     }
 
-    &-content{
+    &__content{
         position: absolute;
-        display: none;
-        opacity: 0;
         left: 0;
         right: 0;
         top: 100%;
+        visibility: collapse;
     }
 
-    &-item{
+    &__item{
         font-size: 18px;
         line-height: 24px;
         cursor: pointer;
@@ -32,12 +32,8 @@
 
     &.active{
 
-        .select-content{
-            display: block;
-        }
-
         .icon-down{
-            color: transparent;
+            visibility: hidden;
         }
 
     }

@@ -1,17 +1,49 @@
-var gulp = require('gulp')
-    sass = require('gulp-sass')(require('sass'))
+var gulp = require('gulp');
+var sass = require('gulp-sass')(require('sass'));
+var svgSprite = require('gulp-svg-sprite');
+var clean = require('gulp-clean');
 
-gulp.task('sass', function(done){
-    return gulp.src(['sass/style.scss'])
-        .pipe(sass({outputStyle: 'expanded'})
-        .on('error', sass.logError))
-        .pipe(gulp.dest('css'))
+gulp.task('sсss', function (done) {
+    return gulp
+        .src(['src/sсss/style.scss'])
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(gulp.dest('build/css'));
 
-    done()
+    done();
+});
+
+gulp.task('js', function(){
+    return gulp.src(['src/js/*.js']).pipe(gulp.dest('build/js'))
 })
 
-gulp.task('watch', function() {
-    gulp.watch(['sass/**/*.sass', 'sass/**/*.scss'], gulp.series('sass'))
+gulp.task('html', function(){
+    return gulp.src(['src/index.html']).pipe(gulp.dest('build'))
 })
 
-gulp.task('default', gulp.series('watch'))
+gulp.task('svgSprite', function () {
+    return gulp.src('src/icons/*.svg') // svg files for sprite
+        .pipe(svgSprite({
+                mode: {
+                    symbol:{
+                        sprite: "../sprite.svg"  //sprite file name
+                    }
+                },
+            }
+        ))
+        .pipe(gulp.dest('build/icons'));
+});
+
+gulp.task('clean', function(){
+    return gulp.src(['build/*']).pipe(clean());
+})
+
+gulp.task('watch', function () {
+    gulp.watch(['src/sсss/**/*.sсss', ''], gulp.series('sсss'));
+    gulp.watch(['src/js/**/*.js', ''], gulp.series('js'));
+    gulp.watch(['src/icons/**/*.svg', ''], gulp.series('svgSprite'));
+    gulp.watch(['src/index.html', ''], gulp.series('html'));
+});
+
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'sсss', 'js', 'svgSprite')));
+
+gulp.task('default', gulp.series('build', 'watch'));

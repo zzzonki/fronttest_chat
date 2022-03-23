@@ -1,0 +1,39 @@
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 90px;
+
+    &_secondary{
+        height: 100px;
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+    }
+
+    &__avatar{
+        margin-right: 5px;
+        margin-left: 20px;
+        width: 65px;
+        height: 65px;
+    }
+
+    &__name{
+        margin: 0 5px;
+        font-size: 22px;
+    }
+
+    #language{
+        font-size: 20px;
+    }
+
+    &__btn{
+        font-size: 22px;
+        line-height: 1;
+        font-weight: 500;
+    }
+
+}
