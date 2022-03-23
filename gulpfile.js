@@ -38,7 +38,7 @@ gulp.task('clean', function(){
 })
 
 gulp.task('watch', function () {
-    gulp.watch(['src/sсss/**/*.sсss', ''], gulp.series('sсss'));
+    gulp.watch(['src/sсss/**/*.scss', ''], gulp.series('sсss'));
     gulp.watch(['src/js/**/*.js', ''], gulp.series('js'));
     gulp.watch(['src/icons/**/*.svg', ''], gulp.series('svgSprite'));
     gulp.watch(['src/index.html', ''], gulp.series('html'));
