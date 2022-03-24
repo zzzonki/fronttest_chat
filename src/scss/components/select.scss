@@ -4,13 +4,10 @@
     transition: .3s;
 
     &__header{
-
         cursor: pointer;
-
         span{
             font-size: 18px;
         }
-
         i{
             width: 9px;
         }
@@ -31,10 +28,8 @@
     }
 
     &.active{
-
         .icon-down{
             visibility: hidden;
         }
-
     }
 }

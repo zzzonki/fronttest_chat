@@ -4,6 +4,7 @@
     justify-content: space-between;
     width: 100%;
 }
+
 .input{
     position: relative;
     display: flex;
@@ -13,7 +14,7 @@
     height: 50px;
     width: calc(100% - 50px);
     color: $color-second;
-    background-color: $color-input;
+    background-color: $color-bg-input;
     border-radius: 25px;
 
     &__emoji{
@@ -31,14 +32,14 @@
         background-color: transparent;
         outline: none;
         border: none;
-
         &:hover{
             border: none;
         }
         &:focus{
-            color: $text-color-main;
+            color: $color-text-main;
         }
     }
+
     &__photo{
         position: absolute;
         top: 0;
@@ -46,6 +47,7 @@
         z-index: 1;
         cursor: pointer;
     }
+
     &__pic{
         position: absolute;
         top: 15px;
@@ -53,7 +55,6 @@
         width: 20px;
         height: 20px;
         overflow: hidden;
-
         input{
             z-index: 3;
             opacity: 0;

@@ -13,19 +13,17 @@
     }
 
     &.message_inc{
-        
         .message__text{
             margin: 5px auto 5px 5px;
-            color: $text-color-main;
+            color: $color-text-main;
             background-color: $color-inc;
         }   
     }
 
     &.message_sent{
-        
         .message__text{
             margin: 5px 5px 5px auto;
-            color: $text-color-second;
+            color: $color-text-2;
             background-color: $color-main;
         }
     }
