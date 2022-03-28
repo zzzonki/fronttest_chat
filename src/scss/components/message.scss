@@ -1,8 +1,10 @@
 .message{
+    $this: &;
+    
     display: flex;
     align-items: center;
     
-    .message__text{
+    &__text{
         display: inline-block;
         vertical-align: top;
         padding: 15px 20px;
@@ -12,16 +14,16 @@
         border-radius: 20px;
     }
 
-    &.message_inc{
-        .message__text{
+    &_inc{
+        #{$this}__text{
             margin: 5px auto 5px 5px;
             color: $color-text-main;
             background-color: $color-inc;
         }   
     }
 
-    &.message_sent{
-        .message__text{
+    &_sent{
+        #{$this}__text{
             margin: 5px 5px 5px auto;
             color: $color-text-2;
             background-color: $color-main;

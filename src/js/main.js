@@ -49,7 +49,6 @@ let socket = new WebSocket(
 );
 
 socket.onopen = function (event) {
-    console.log('opened');
     socket.send('opened');
 };
 
@@ -59,11 +58,12 @@ socket.onmessage = (event) => {
         time: new Date(),
         inc: true,
     };
+    
     sendMessage(message);
 };
 
 socket.onclose = function (event) {
-    console.log('closed');
+    socket.send('closed');
 };
 
 input_img.addEventListener('change', (event) => {
@@ -84,6 +84,7 @@ input_img.addEventListener('change', (event) => {
                 event.target.result +
                 '" alt=""></div><svg class="icon-check" viewBox="0 0 24 24"><use xlink:href="./icons/sprite.svg#icon-check" /></svg></div>'
         );
+        
         chatbox.lastChild.scrollIntoView({
             behavior: 'auto',
             block: 'end',
@@ -128,13 +129,14 @@ function sendMessage(message) {
         );
     } else {
         input.value = '';
+
         chatbox.insertAdjacentHTML(
             'beforeEnd',
             '<div class="message message_sent"><div class="message__text"><span>' +
                 messages[messages.length - 1].text +
                 '</span></div><svg class="icon-check" viewBox="0 0 24 24"><use xlink:href="./icons/sprite.svg#icon-check" /></svg></div>'
         );
-        console.log(messages);
+
         chatbox.lastChild.scrollIntoView({
             behavior: 'auto',
             block: 'end',
